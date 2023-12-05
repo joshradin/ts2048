@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Card, Grid, Sheet, Stack, Typography} from "@mui/joy";
+import { GameBoard } from "./Game";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Sheet>
+          <Stack sx={{
+              paddingTop: "5dvh",
+              margin: "auto",
+              width: "75%"
+          }}
+                 spacing={2}
+          >
+              <Card>
+                  <Typography level={"h1"} sx={{ textAlign: "center" }}>
+                      2048
+                  </Typography>
+              </Card>
+              <Card
+                  variant={"outlined"}
+              >
+                  <GameBoard size={4} />
+              </Card>
+          </Stack>
+      </Sheet>
   );
 }
 
